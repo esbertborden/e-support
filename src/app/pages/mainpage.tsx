@@ -318,7 +318,7 @@ function HomeContent() {
 function BankStatementForm() {
   return (
     <div className="max-w-md">
-      <h1 className="text-xl font-semibold mb-4">Bank Statement</h1>
+      <h1 className="text-xl font-semibold text-white-200 mb-8">Bank Statement</h1>
 
       <Input placeholder="Account Number" className="mb-3" />
       <Input type="date" className="mb-3" />

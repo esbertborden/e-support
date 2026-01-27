@@ -1,6 +1,6 @@
 "use client";
 
-import { GitHubBanner, Refine, type AuthProvider } from "@refinedev/core";
+import { Refine, type AuthProvider } from "@refinedev/core";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import { SessionProvider, signIn, signOut, useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
@@ -105,7 +105,6 @@ const App = (props: React.PropsWithChildren<AppProps>) => {
 
   return (
     <>
-      <GitHubBanner />
       <RefineKbarProvider>
         <ThemeProvider>
           <Refine
@@ -140,6 +139,7 @@ const App = (props: React.PropsWithChildren<AppProps>) => {
               syncWithLocation: true,
               warnWhenUnsavedChanges: true,
               liveMode: "auto",
+              disableTelemetry: true,
             }}
           >
             {props.children}
