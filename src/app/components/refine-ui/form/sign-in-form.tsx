@@ -4,8 +4,7 @@ import { useState } from "react";
 
 import { CircleHelp } from "lucide-react";
 
-import { InputPassword } from "@/components/refine-ui/form/input-password";
-import { Button } from "@/components/ui/button";
+import { Button } from "@*/components/ui/button";
 import {
   Card,
   CardContent,
@@ -13,11 +12,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
+} from "@*/components/ui/card";
+
+import { Checkbox } from "@radix-ui/react-checkbox";
+import { Input } from "@*/components/ui/input";
+import { Label } from "@radix-ui/react-context-menu";
+import { Separator } from "@*/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { useLink, useLogin, useRefineOptions } from "@refinedev/core";
 
@@ -113,7 +113,10 @@ export const SignInForm = () => {
               className={cn("relative", "flex", "flex-col", "gap-2", "mt-6")}
             >
               <Label htmlFor="password">Password</Label>
-              <InputPassword
+              <Input
+                id="password"
+                type="password"
+                placeholder=""
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required

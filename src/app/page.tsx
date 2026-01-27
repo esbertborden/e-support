@@ -1,17 +1,14 @@
 "use client";
 
-import { Suspense } from "react";
-
-import { Authenticated } from "@refinedev/core";
+// import { SidebarProvider } from "@*/components/ui/sidebar";
 import MainPage from "./pages/mainpage";
 
-
-export default function IndexPage() {
+export default function Page() {
   return (
-    <Suspense>
-      <Authenticated key="home-page">
-        <MainPage/>
-      </Authenticated>
-    </Suspense>
+   
+      <div className="flex h-screen w-full">
+      <MainPage/>
+      </div>
+   
   );
 }

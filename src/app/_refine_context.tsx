@@ -9,8 +9,8 @@ import React from "react";
 import routerProvider from "@refinedev/nextjs-router";
 
 import "@/app/globals.css";
-import { useNotificationProvider } from "@/components/refine-ui/notification/use-notification-provider";
-import { ThemeProvider } from "@/components/refine-ui/theme/theme-provider";
+import { useNotificationProvider } from "./components/refine-ui/notification/use-notification-provider";
+import { ThemeProvider } from "./components/refine-ui/theme/theme-provider";
 import { dataProvider, liveProvider } from "@providers/data-provider";
 
 type RefineContextProps = {

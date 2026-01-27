@@ -1,4 +1,4 @@
-import { UndoableNotification } from "@/components/refine-ui/notification/undoable-notification";
+import { UndoableNotification } from "./undoable-notification";
 import type { NotificationProvider } from "@refinedev/core";
 import { toast } from "sonner";
 
