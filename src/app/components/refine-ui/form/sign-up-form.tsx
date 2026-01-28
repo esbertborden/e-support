@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import { InputPassword } from "@/components/refine-ui/form/input-password";
-import { Button } from "@/components/ui/button";
+import { InputPassword } from "./input-password";
+import { Button } from "@*/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,10 +11,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
+} from "@app/components/ui/card";
+import { Input } from "@*/components/ui/input";
+import { Label } from "@app/components/ui/label";
+import { Separator } from "@*/components/ui/separator";
 import { cn } from "@/lib/utils";
 import {
   useLink,
