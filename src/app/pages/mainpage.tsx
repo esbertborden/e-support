@@ -1,150 +1,3 @@
-// "use client"
-
-// import * as React from "react"
-// import {
-//   Sidebar,
-//   SidebarContent,
-//   SidebarFooter,
-//   SidebarGroup,
-//   SidebarGroupLabel,
-//   SidebarMenu,
-//   SidebarMenuButton,
-//   SidebarMenuItem,
-//   SidebarProvider,
-//   SidebarInset,
-// } from "@*/components/ui/sidebar"
-
-// import { Button } from "@*/components/ui/button"
-// import { Input } from "@*/components/ui/input"
-// import {
-//   Home,
-//   FileText,
-//   CreditCard,
-//   Settings,
-// } from "lucide-react"
-
-// type Tab = "home" | "bank" | "cheque" | "settings"
-
-// export default function DashboardPage() {
-//   const [activeTab, setActiveTab] = React.useState<Tab>("home")
-
-//   return (
-//     <SidebarProvider>
-//       <Sidebar>
-//         <SidebarContent>
-//           <SidebarGroup>
-//             <SidebarGroupLabel>Menu</SidebarGroupLabel>
-
-//             <SidebarMenu>
-//               <SidebarMenuItem>
-//                 <SidebarMenuButton
-//                   isActive={activeTab === "home"}
-//                   onClick={() => setActiveTab("home")}
-//                 >
-//                   <Home />
-//                   <span>Home</span>
-//                 </SidebarMenuButton>
-//               </SidebarMenuItem>
-
-//               <SidebarMenuItem>
-//                 <SidebarMenuButton
-//                   isActive={activeTab === "bank"}
-//                   onClick={() => setActiveTab("bank")}
-//                 >
-//                   <FileText />
-//                   <span>Bank Statement</span>
-//                 </SidebarMenuButton>
-//               </SidebarMenuItem>
-
-//               <SidebarMenuItem>
-//                 <SidebarMenuButton
-//                   isActive={activeTab === "cheque"}
-//                   onClick={() => setActiveTab("cheque")}
-//                 >
-//                   <CreditCard />
-//                   <span>Cheque Balance</span>
-//                 </SidebarMenuButton>
-//               </SidebarMenuItem>
-//               <SidebarMenuItem>
-//                 <SidebarMenuButton
-//                   isActive={activeTab === "settings"}
-//                   onClick={() => setActiveTab("settings")}
-//                 >
-//                   <Settings />
-//                   <span>Settings</span>
-//                </SidebarMenuButton>
-//               </SidebarMenuItem>
-//               </SidebarMenu>
-//               </SidebarGroup>
-//               </SidebarContent>
-
-//         <SidebarFooter />
-//       </Sidebar>
-
-//       <SidebarInset>
-//         <div className="p-6">
-//           {activeTab === "home" && <HomeContent />}
-//           {activeTab === "bank" && <BankStatementForm />}
-//           {activeTab === "cheque" && <ChequeBalanceForm />}
-//           {activeTab === "settings" && <SettingsContent />}
-//         </div>
-//       </SidebarInset>
-//     </SidebarProvider>
-//   )
-// }
-
-// /* ---------- CONTENT SECTIONS ---------- */
-
-// function HomeContent() {
-//   return (
-//     <>
-//       <h1 className="text-2xl font-bold">Welcome 👋</h1>
-//       <p className="mt-2 text-muted-foreground">
-//         Use the sidebar to navigate through your banking options.
-//       </p>
-//     </>
-//   )
-// }
-
-// function BankStatementForm() {
-//   return (
-//     <div className="max-w-md">
-//       <h1 className="text-xl font-semibold text-white-200 mb-8">Bank Statement</h1>
-
-//       <Input placeholder="Account Number" className="mb-3" />
-//       <Input type="date" className="mb-3" />
-//       <Input type="date" className="mb-4" />
-
-//       <Button>Request Statement</Button>
-//     </div>
-//   )
-// }
-
-// function ChequeBalanceForm() {
-//   return (
-//     <div className="max-w-md">
-//       <h1 className="text-xl font-semibold mb-4">Cheque Balance</h1>
-
-//       <Input placeholder="Cheque Number" className="mb-3" />
-//       <Input placeholder="Account Number" className="mb-4" />
-
-//       <Button>Check Balance</Button>
-//     </div>
-//   )
-// }
-
-// function SettingsContent() {
-//   return (
-//     <>
-//       <h1 className="text-xl font-semibold">Settings</h1>
-//       <p className="mt-2 text-muted-foreground">
-//         Settings options will appear here.
-//       </p>
-//     </>
-//   )
-// }
-
-
 "use client"
 
 import * as React from "react"
@@ -258,12 +111,13 @@ export default function DashboardPage() {
 
   // Define bank menu items matching the screenshot
   const bankMenuItems = [
-    { id: "products", label: "Products", icon: <Package className="h-4 w-4" /> },
-    { id: "catalogue", label: "Catalogue", icon: <FileSpreadsheet className="h-4 w-4" /> },
-    { id: "checkout-links", label: "Checkout Links", icon: <ShoppingCart className="h-4 w-4" /> },
-    { id: "discounts", label: "Discounts", icon: <Tag className="h-4 w-4" /> },
-    { id: "usage-billing", label: "Usage Billing", icon: <DollarSign className="h-4 w-4" /> },
+    { id: "products", label: "Products", icon: <Package className="h-4 w-4 text-blue-300" /> },
+    { id: "catalogue", label: "Catalogue", icon: <FileSpreadsheet className="h-4 w-4 text-blue-300" /> },
+    { id: "checkout-links", label: "Checkout Links", icon: <ShoppingCart className="h-4 w-4 text-blue-300" /> },
+    { id: "discounts", label: "Discounts", icon: <Tag className="h-4 w-4 text-blue-300" /> },
+    { id: "usage-billing", label: "Usage Billing", icon: <DollarSign className="h-4 w-4 text-blue-300" /> },
   ]
+
 
   return (
     <SidebarProvider>
@@ -309,10 +163,10 @@ export default function DashboardPage() {
                           key={item.id}
                           onClick={() => handleBankSubMenuClick(item.id as Tab)}
                           className={cn(
-                            "flex items-center gap-2 w-full px-3 py-2 text-sm rounded-md transition-colors",
+                            "flex items-center gap-1 px-3 py-2 text-sm rounded-md hover:bg-sky-700",
                             activeTab === item.id
-                              ? "bg-blue-50 text-blue-700 font-medium"
-                              : "text-gray-700 hover:bg-gray-50"
+                              ? "bg-sky-100 text-blue-700 font-medium"
+                              : "text-white-700 hover:bg-gray-10"
                           )}
                         >
                           {item.icon}
@@ -382,7 +236,7 @@ export default function DashboardPage() {
 function HomeContent() {
   return (
     <>
-      <h1 className="text-2xl font-bold">Welcome 👋</h1>
+      <h1 className="text-2xl font-bold text-blue-400">Welcome 👋</h1>
       <p className="mt-2 text-muted-foreground">
         Use the sidebar to navigate through your banking options.
       </p>
@@ -418,7 +272,7 @@ function ProductsContent({ onSubmit }: BankContentProps) {
         <div className="flex items-center gap-3">
           <Package className="h-6 w-6 text-gray-600" />
           <div>
-            <h1 className="text-2xl font-bold">Products</h1>
+            <h1 className="text-2xl font-bold text-blue-400">Products</h1>
             <p className="text-sm text-gray-500 mt-1">Manage your banking products and statements</p>
           </div>
         </div>
@@ -529,7 +383,7 @@ function CatalogueContent({ onSubmit }: BankContentProps) {
         <div className="flex items-center gap-3">
           <FileSpreadsheet className="h-6 w-6 text-gray-600" />
           <div>
-            <h1 className="text-2xl font-bold">Catalogue</h1>
+            <h1 className="text-2xl font-bold text-blue-400">Catalogue</h1>
             <p className="text-sm text-gray-500 mt-1">View and manage statement templates</p>
           </div>
         </div>
@@ -571,7 +425,7 @@ function CheckoutLinksContent({ onSubmit }: BankContentProps) {
         <div className="flex items-center gap-3">
           <ShoppingCart className="h-6 w-6 text-gray-600" />
           <div>
-            <h1 className="text-2xl font-bold">Checkout Links</h1>
+            <h1 className="text-2xl font-bold text-blue-400">Checkout Links</h1>
             <p className="text-sm text-gray-500 mt-1">Generate links for statement purchases</p>
           </div>
         </div>
@@ -631,7 +485,7 @@ function DiscountsContent({ onSubmit }: BankContentProps) {
         <div className="flex items-center gap-3">
           <Tag className="h-6 w-6 text-gray-600" />
           <div>
-            <h1 className="text-2xl font-bold">Discounts</h1>
+            <h1 className="text-2xl font-bold text-blue-400">Discounts</h1>
             <p className="text-sm text-gray-500 mt-1">Manage statement discounts and promotions</p>
           </div>
         </div>
@@ -675,7 +529,7 @@ function UsageBillingContent({ onSubmit }: BankContentProps) {
         <div className="flex items-center gap-3">
           <DollarSign className="h-6 w-6 text-gray-600" />
           <div>
-            <h1 className="text-2xl font-bold">Usage Billing</h1>
+            <h1 className="text-2xl font-bold text-blue-400">Usage Billing</h1>
             <p className="text-sm text-gray-500 mt-1">Track and manage statement usage costs</p>
           </div>
         </div>
@@ -758,7 +612,7 @@ function ChequeBalanceForm({ onSubmit }: ChequeBalanceFormProps) {
 
   return (
     <div className="max-w-md">
-      <h1 className="text-2xl font-bold mb-8">Cheque Balance</h1>
+      <h1 className="text-2xl font-bold mb-8 text-blue-400">Cheque Balance</h1>
       
       <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-4">
         <div className="space-y-2">
@@ -807,7 +661,7 @@ function AllRequestsContent() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold">All Requests</h1>
+        <h1 className="text-2xl font-bold text-blue-400">All Requests</h1>
         <p className="text-sm text-gray-500 mt-1">View and manage all your banking requests</p>
       </div>
 
@@ -875,7 +729,7 @@ function AllRequestsContent() {
 function SettingsContent() {
   return (
     <>
-      <h1 className="text-2xl font-bold">Settings</h1>
+      <h1 className="text-2xl font-bold text-blue-400">Settings</h1>
       <p className="mt-2 text-muted-foreground">
         Configure your banking preferences and notifications.
       </p>
