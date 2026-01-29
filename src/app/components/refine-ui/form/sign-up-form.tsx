@@ -163,7 +163,7 @@ export const SignUpForm = () => {
               Have an account?{" "}
             </span>
             <Link
-              to="/login"
+              to="/signin"
               className={cn(
                 "text-blue-600",
                 "dark:text-blue-400",
