@@ -64,7 +64,7 @@ export const SignInForm = () => {
   return (
     <div
       className={cn(
-        "flex",
+        "flex flex-1",
         "flex-col",
         "items-center",
         "justify-center",
@@ -87,8 +87,8 @@ export const SignInForm = () => {
         <CardHeader className={cn("px-0")}>
           <CardTitle
             className={cn(
-              "text-blue-600",
-              "dark:text-blue-400",
+              "text-black-600",
+              "dark:text-black-400",
               "text-3xl",
               "font-semibold"
             )}
@@ -96,7 +96,7 @@ export const SignInForm = () => {
             Sign in
           </CardTitle>
           <CardDescription
-            className={cn("dark:text-blue-500", "font-medium")}
+            className={cn("dark:text-black-500", "font-medium")}
           >
             Welcome back
           </CardDescription>
@@ -157,8 +157,8 @@ export const SignInForm = () => {
                   "items-center",
                   "gap-2",
                   "text-primary hover:underline",
-                  "text-blue-600",
-                  "dark:text-blue-400"
+                  "text-black-600",
+                  "dark:text-black-400"
                 )}
               >
                 <span>Forgot password</span>
@@ -173,22 +173,6 @@ export const SignInForm = () => {
         </CardContent>
 
         <CardFooter>
-          <div className={cn("w-full", "text-center text-sm")}>
-            <span className={cn("text-sm", "dark:text-blue-400")}>
-              No account?{" "}
-            </span>
-            <Link
-              to="/signup"
-              className={cn(
-                "text-blue-600",
-                "dark:text-blue-400",
-                "font-semibold",
-                "underline"
-              )}
-            >
-             Sign up
-            </Link>
-          </div>
         </CardFooter>
       </Card>
     </div>
